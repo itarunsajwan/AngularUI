@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <title>Sign Up</title>
+    </head>
+    <body>
+        <div class="container">
+            <form #form ="ngForm" autocomplete="off" (submit)="onSubmit(form)" >
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="signup-text text-center mb-3"> Sign Up </h3>
+                        <hr>
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input class="form-control" FullName = "ngModel" [(ngModel)]="service.formData.FullName"  type="input" name="fullname" placeholder="Enter Your Full Name" required> 
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input class="form-control" (keydown.tab)="Mail($event)" Email = "ngModel" [(ngModel)]="service.formData.Email" type="email" name="email" placeholder="Enter Your Email" required> 
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input class="form-control" Address = "ngModel" [(ngModel)]="service.formData.Address"  type="input" name="address" placeholder="Enter Your Address" required> 
+                            </div>
+                            <div class="form-group">
+                                <label for="contactnumber"> Contact Number </label>
+                                <input class="form-control" ContactNumber = "ngModel" [(ngModel)]="service.formData.ContactNumber"  type="input" name="contactnumber" placeholder="Enter Your Number" required> 
+                            </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input class="form-control" Country = "ngModel" [(ngModel)]="service.formData.Country" type="input" name="country" placeholder="Country" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input class="form-control" State = "ngModel" [(ngModel)]="service.formData.State" type="input" name="state" placeholder="State" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input class="form-control" City = "ngModel" [(ngModel)]="service.formData.City" type="input" name="city" placeholder="City" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="pincode">Pincode</label>
+                                    <input class="form-control" Pincode = "ngModel" [(ngModel)]="service.formData.Pincode" type="input" name="pincode" placeholder="City Pincode" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input class="form-control" Password = "ngModel" [(ngModel)]="service.formData.Password"  type="password" name="password" placeholder="Password" required >
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmpassword">Confirm Password</label>
+                                    <input class="form-control" ConfirmPassword = "ngModel" [(ngModel)]="service.formData.ConfirmPassword"  type="password" name="confirmpassword" placeholder="Confirm Password" required >
+                                </div>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="form.invalid" class="btn btn-outline-secondary">
+                    Register
+                </button>
+                &nbsp;&nbsp;<a class="link-dark"routerLink= "/signin">Already a user ?</a>
+            </form>
+        </div>
+    </body>
+</html>
